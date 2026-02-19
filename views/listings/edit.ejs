@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Listing - WanderLust</title>
+</head>
+<body>
+
+    <h3>Edit Listing</h3>
+
+    <form method="POST" action="/listings/<%= listing._id %>?_method=PUT">
+
+        <h3>Title</h3>
+        <input 
+            name="listing[title]" 
+            type="text"
+            value="<%= listing.title %>"
+        >
+        <br><br>
+
+        <h3>Description</h3>
+        <input 
+            name="listing[description]" 
+            type="text"
+            value="<%= listing.description %>"
+        >
+        <br><br>
+
+        <h3>Image URL</h3>
+        <input 
+            name="listing[image][url]" 
+            type="text"
+            value="<%= listing.image.url %>"
+        >
+        <br><br>
+
+        <h3>Price</h3>
+        <input 
+            name="listing[price]" 
+            type="number"
+            value="<%= listing.price %>"
+        >
+        <br><br>
+
+        <h3>Country</h3>
+        <input 
+            name="listing[country]" 
+            type="text"
+            value="<%= listing.country %>"
+        >
+        <br><br>
+
+        <h3>Location</h3>
+        <input 
+            name="listing[location]" 
+            type="text"
+            value="<%= listing.location %>"
+        >
+        <br><br>
+
+        <button type="submit">Update Listing</button>
+
+    </form>
+
+    <br>
+    <a href="/listings/<%= listing._id %>">Cancel</a>
+
+</body>
+</html>

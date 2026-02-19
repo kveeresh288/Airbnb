@@ -3,32 +3,42 @@ const Schema = mongoose.Schema;
 
 const listingSchema = new Schema({
     title: { 
-        type: String, 
-        required: [true, "Title is required"] 
+      type: String, 
+      required: [true, "Title is required"] 
     },
+  
     description: { 
-        type: String, 
-        required: [true, "Description is required"] 
+      type: String, 
+      required: [true, "Description is required"] 
     },
-    image: { 
+  
+    image: {
+      filename: {
+        type: String,
+        default: "listingimage"
+      },
+      url: {
         type: String,
         required: [true, "Image URL is required"]
-        // set: (v) => v==="" ? "defaultLink": v ,
-    }, // we can also add default image if image is not avaiable using Ternary Operator 
+      }
+    },
+  
     price: { 
-        type: Number,
-        required: [true, "Price is required"] 
+      type: Number,
+      required: [true, "Price is required"],
+      min: 0
     },
+  
     location: { 
-        type: String, 
-        required: [true, "Location is required"] 
+      type: String, 
+      required: [true, "Location is required"] 
     },
+  
     country: { 
-        type: String, 
-        required: [true, "Country is required"] 
+      type: String, 
+      required: [true, "Country is required"] 
     }
-});
-
+  });
 const  Listing = mongoose.model("Listing",listingSchema);
 
 module.exports = Listing;

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WanderLust-AIRBNB</title>
+</head>
+<body>
+    <h3>Create a New List </h3>
+    <form method="POST" action="/listings" type="text">
+    <h3>title</h3>
+    <input name="listing[title]" placeholder="Enter Title" type="text">
+    <br>
+    <h3>description</h3>
+    <input name="listing[description]" placeholder="Enter description" type="Text">
+    <br>
+    <h3>Image URL</h3>
+    <input name="listing[image][url]" type="text">
+
+    <br>
+    <h3>price</h3>
+    <input name="listing[price]" placeholder="Enter Price" type="number">
+    <br>
+    <h3>country</h3>
+    <input name="listing[country]" placeholder="Enter Country" type="text">
+    <br>
+    <h3>location</h3>
+    <input name="listing[location]" placeholder="Enter Location" type="text">
+    <br>
+    <button>Add</button>
+</form>
+</body>
+</html>
